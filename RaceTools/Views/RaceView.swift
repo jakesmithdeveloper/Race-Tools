@@ -20,33 +20,51 @@ struct RaceView: View {
     @State private var url: String
     
     var body: some View {
-        Form {
-            Section("Race Info") {
-                HStack {
-                    Text("Name: ")
-                    if editMode?.wrappedValue.isEditing == true {
-                        TextField("name", text: $name)
-                    } else {
-                        Text(name)
-                            .foregroundColor(.secondary)
+        VStack {
+            AsyncImage(url: URL(string: race.imgUrl ?? "")) { img in
+                img
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                Color.gray
+            }
+
+            Form {
+                Section("Race Info") {
+                    HStack {
+                        Text("Name: ")
+                        if editMode?.wrappedValue.isEditing == true {
+                            TextField("name", text: $name)
+                        } else {
+                            Text(name)
+                                .foregroundColor(.secondary)
+                        }
                     }
-                }
-                if editMode?.wrappedValue.isEditing == true {
-                    DatePicker("race date ", selection: $date, displayedComponents: [.date])
-                } else {
-                    Text("Race Date: \(race.raceDateString)")
-                }
-                HStack {
-                    Text("race url: ")
                     if editMode?.wrappedValue.isEditing == true {
-                        TextField("url", text: $url)
+                        DatePicker("race date ", selection: $date, displayedComponents: [.date])
                     } else {
-                        Text(url)
-                            .foregroundColor(.secondary)
+                        Text("Race Date: \(race.raceDateString)")
                     }
-                }
-                if editMode?.wrappedValue.isEditing == true {
-                    Toggle("completed", isOn: $completed)
+                    HStack {
+                        Text("race url: ")
+                        if editMode?.wrappedValue.isEditing == true {
+                            TextField("url", text: $url)
+                        } else {
+                            Text(url)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                    if editMode?.wrappedValue.isEditing == true {
+                        Toggle("completed", isOn: $completed)
+                    }
+                    if editMode?.wrappedValue.isEditing == true {
+                        Button("Delete Race", role: .destructive) {
+                            //dataController.delete(race)
+                        }
+                        .onTapGesture {
+                            dataController.delete(race)
+                        }
+                    }
                 }
             }
         }
@@ -70,7 +88,6 @@ struct RaceView: View {
     
     init(race: Race) {
         self.race = race
-        
         _name = State(wrappedValue: race.raceName)
         _date = State(wrappedValue: race.raceDate)
         _completed = State(wrappedValue: race.completed)

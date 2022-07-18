@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import SwiftSoup
 
 extension Race {
 
@@ -39,23 +41,25 @@ extension Race {
     var raceURL: String {
         url ?? ""
     }
-
-    var raceGoalFinish: String {
-        goalFinish ?? ""
+    
+    var raceDistance: String {
+        distance ?? ""
     }
     
-    var raceGoalPace: String {
-        goalPace ?? ""
+    var raceDistanceUnit: String {
+        distanceUnit ?? ""
     }
     
     static var example: Race {
-        let controller = DataController(inMemory: true)
+        let controller = DataController.preview
         let viewContext = controller.container.viewContext
         
         let race = Race(context: viewContext)
-        race.name = "Example Race"
+        race.name = "Santa Sprint 5k"
         race.completed = false
-        race.date = Date.now
+        race.date = Calendar.current.date(from: DateComponents(year: 2022, month: 6, day: 23))
+        race.distance = "5"
+        race.distanceUnit = "kilometer"
         return race
     }
 }

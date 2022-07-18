@@ -15,8 +15,8 @@ class DataController: ObservableObject {
         let viewContext = container.viewContext
         let calendar = Calendar.current
         
-        let dates = [calendar.date(from: DateComponents(year: 2022, month: 5, day: 30)), calendar.date(from: DateComponents(year: 2022, month: 6, day: 26)), calendar.date(from: DateComponents(year: 2022, month: 7, day: 4)), calendar.date(from: DateComponents(year: 2022, month: 7, day: 16))]
-        let names = ["20th Highways One 5K", "20th Beach patrol 5k", "16th Dewey beach liquors 5k", "21st Santa Spring 5k"]
+        let dates = [calendar.date(from: DateComponents(year: 2022, month: 7, day: 4)), calendar.date(from: DateComponents(year: 2022, month: 7, day: 16)), calendar.date(from: DateComponents(year: 2022, month: 7, day: 30)), calendar.date(from: DateComponents(year: 2022, month: 8, day: 13))]
+        let names = ["16th Dewey Beach Liquors 5k at Northbeach", "21st Santa Sprint 5k at Northbeach", "20th Penn State Day 5k at Northbeach", "ettie James Fest 5k at Northbeach"]
         
         for i in 0...3 {
             let race = Race(context: viewContext)
@@ -36,6 +36,7 @@ class DataController: ObservableObject {
     
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
+        save()
     }
 
 

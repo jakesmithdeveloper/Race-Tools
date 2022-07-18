@@ -25,9 +25,12 @@
 		87E168E82822C72D00A2F936 /* Race-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E168E72822C72D00A2F936 /* Race-CoreDataHelpers.swift */; };
 		87E168EB2822CA5D00A2F936 /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E168EA2822CA5D00A2F936 /* RaceView.swift */; };
 		A5E5FE072857D0CB00F9B127 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5FE062857D0CB00F9B127 /* CalendarView.swift */; };
+		F0C370C3061A626038EC7550 /* Pods_RaceTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7370BF6218E612754A2D7FFE /* Pods_RaceTools.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291C7DF19FF00FCCBF71D5DE /* Pods-RaceTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaceTools.release.xcconfig"; path = "Target Support Files/Pods-RaceTools/Pods-RaceTools.release.xcconfig"; sourceTree = "<group>"; };
+		7370BF6218E612754A2D7FFE /* Pods_RaceTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaceTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87034DA028240E7E000A7FD5 /* PaceCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceCalculatorView.swift; sourceTree = "<group>"; };
 		8717101928299EA3003558E5 /* PaceCalculator-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaceCalculator-ViewModel.swift"; sourceTree = "<group>"; };
 		871947BE2829512C00BE4CCE /* RaceDateCalculator-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RaceDateCalculator-ViewModel.swift"; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		87E168E72822C72D00A2F936 /* Race-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Race-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		87E168EA2822CA5D00A2F936 /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A5E5FE062857D0CB00F9B127 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		F3B73A6C64EAF97DA078A2FE /* Pods-RaceTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaceTools.debug.xcconfig"; path = "Target Support Files/Pods-RaceTools/Pods-RaceTools.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0C370C3061A626038EC7550 /* Pods_RaceTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BD714E5823FCE2B057EE932 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3B73A6C64EAF97DA078A2FE /* Pods-RaceTools.debug.xcconfig */,
+				291C7DF19FF00FCCBF71D5DE /* Pods-RaceTools.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		794E33BA7C0257158D3712F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7370BF6218E612754A2D7FFE /* Pods_RaceTools.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		871947C02829513500BE4CCE /* View-Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +111,8 @@
 			children = (
 				87D063F0281BFC9600947806 /* RaceTools */,
 				87D063EF281BFC9600947806 /* Products */,
+				4BD714E5823FCE2B057EE932 /* Pods */,
+				794E33BA7C0257158D3712F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87D063FC281BFC9700947806 /* Build configuration list for PBXNativeTarget "RaceTools" */;
 			buildPhases = (
+				EEF17CAEE855293F9D559230 /* [CP] Check Pods Manifest.lock */,
 				87D063EA281BFC9600947806 /* Sources */,
 				87D063EB281BFC9600947806 /* Frameworks */,
 				87D063EC281BFC9600947806 /* Resources */,
+				A5EAAD365CDED89129690D0D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +223,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5EAAD365CDED89129690D0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaceTools/Pods-RaceTools-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaceTools/Pods-RaceTools-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaceTools/Pods-RaceTools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF17CAEE855293F9D559230 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RaceTools-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87D063EA281BFC9600947806 /* Sources */ = {
@@ -343,6 +411,7 @@
 		};
 		87D063FD281BFC9700947806 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B73A6C64EAF97DA078A2FE /* Pods-RaceTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -373,6 +442,7 @@
 		};
 		87D063FE281BFC9700947806 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 291C7DF19FF00FCCBF71D5DE /* Pods-RaceTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

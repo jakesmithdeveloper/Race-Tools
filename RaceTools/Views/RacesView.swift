@@ -48,18 +48,20 @@ struct RacesView: View {
         NavigationView {
             List {
                 ForEach(sections) { section in
-                    Section("\(section.name)") {
-                        ForEach(section.races, id: \.self) { race in
-                            RaceRow(race: race)
-                        }
-                        .onDelete { offsets in
-                            for offset in offsets {
-                                let race = races[offset]
-                                dataController.delete(race)
+                    if section.races.isEmpty != true {
+                        Section("\(section.name)") {
+                            ForEach(section.races, id: \.self) { race in
+                                RaceRow(race: race)
                             }
-                            
-                            dataController.save()
-                        }
+                            .onDelete { offsets in
+                                for offset in offsets {
+                                    let race = races[offset]
+                                    dataController.delete(race)
+                                }
+                                
+                                dataController.save()
+                            }
+                        }                        
                     }
                 }
             }
